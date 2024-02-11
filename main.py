@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from bs4 import BeautifulSoup
 import requests
+from flask_cors import CORS, cross_origin
 
 # import utils
 from utils.handle_key_values import handle_key_values
@@ -8,6 +9,8 @@ from utils.uuid import get_a_uuid
 
 
 app = Flask(__name__)
+
+CORS(app)
 
 API_URL = "https://www.scrapethissite.com/pages/forms/?per_page=100"
 
